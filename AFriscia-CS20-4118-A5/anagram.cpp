@@ -13,7 +13,6 @@ using namespace std;
 
 const int MAXRESULTS   = 20;    // Max matches that can be found
 const int MAXDICTWORDS = 30000; // Max words that can be read in
-const char* DICTIONARYFILE = "words.txt"; // Name of dictionary file
 
 int main()
 {
@@ -23,7 +22,7 @@ int main()
     int nwords;                // number of words read from dictionary
     string word;
     
-    dictfile.open(DICTIONARYFILE);
+    dictfile.open("words.txt");
     if (!dictfile) {
         cout << "File not found!" << endl;
         return (1);
