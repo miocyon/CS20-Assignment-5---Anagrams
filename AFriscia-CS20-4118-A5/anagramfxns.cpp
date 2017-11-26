@@ -1,10 +1,9 @@
-//
-//  anagramfxns.cpp
-//  AFriscia-CS20-4118-A5
-//
-//  Created by Toe-Knee on 11/24/17.
-//  Copyright © 2017 Toe-Knee. All rights reserved.
-//
+// Anthony Friscia
+// CS20A, Section #4118
+// Assignment #5
+// Thi is an anagram finding program that takes an input string, and finds all anagrams of it, and checks these againist
+// a given wordlist.
+// This is the implementation file for the functions for this program.
 
 #include "anagramfxns.hpp"
 #include <string>

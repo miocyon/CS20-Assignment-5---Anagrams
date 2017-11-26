@@ -1,3 +1,9 @@
+// Anthony Friscia
+// CS20A, Section #4118
+// Assignment #5
+// Thi is an anagram finding program that takes an input string, and finds all anagrams of it, and checks these againist
+// a given wordlist.
+
 #include <iostream>
 #include <fstream>
 #include <istream>
