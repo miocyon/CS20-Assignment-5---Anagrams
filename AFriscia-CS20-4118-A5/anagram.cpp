@@ -22,7 +22,7 @@ int main()
     int nwords;                // number of words read from dictionary
     string word;
     
-    dictfile.open("words.txt");
+    dictfile.open("/Users/elendil/Dropbox/Mine/DBDocuments/CS20A/Assignment5/words.txt");
     if (!dictfile) {
         cout << "File not found!" << endl;
         return (1);

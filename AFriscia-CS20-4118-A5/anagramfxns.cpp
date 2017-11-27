@@ -7,6 +7,7 @@
 
 #include "anagramfxns.hpp"
 #include <string>
+#include <iostream>
 #include <fstream>
 using namespace std;
 
@@ -14,8 +15,15 @@ int readDictionary(istream &dictfile, string dict[])
 {
 //  Places each string in dictfile into the array dict. Returns the number of words read into dict.
 //  This number should not be larger than MAXDICTWORDS since that is the size of the array.
+    string linedump;
+    int dictcount = 0;
     
-    
+    while(getline(dictfile, linedump))
+    {
+        dict[dictcount] = linedump;
+        dictcount++;
+    }
+    return dictcount;
 }
 
 int recursivePermute(string word, const string dict[], int size, string results[]);
