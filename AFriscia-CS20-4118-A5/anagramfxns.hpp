@@ -13,11 +13,13 @@
 #include <fstream>
 using namespace std;
 
+void swap (char *x, char *y);
+
 int readDictionary(istream &dictfile, string dict[]);
 
-//int recursivePermute(string word, const string dict[], int size, string results[]);
-//
-//void recurPrint(const string results[], int size);
+int recursivePermute(string word, const string dict[], int size, string results[]);
+
+void recurPrint(const string results[], int size);
 
 
 #endif /* anagramfxns_hpp */

@@ -29,13 +29,14 @@ int main()
     }
     
     nwords = readDictionary(dictfile, dict);
-//    
-//    cout << "Please enter a string for an anagram: ";
-//    cin >> word;
-//    
-//    int numMatches = recursivePermute(word, dict, nwords, results);
-//    if (!numMatches)
-//        cout << "No matches found" << endl;
-//    else
-//        recurPrint(results, numMatches);
+    
+    cout << "Please enter a string for an anagram: ";
+    cin >> word;
+    
+    int numMatches = recursivePermute(word, dict, nwords, results);
+    if (!numMatches)
+        cout << "No matches found" << endl;
+    else
+       recurPrint(results, numMatches);
+
 }
