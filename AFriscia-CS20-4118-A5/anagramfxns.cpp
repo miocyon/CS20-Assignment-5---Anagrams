@@ -11,15 +11,6 @@
 #include <fstream>
 using namespace std;
 
-void swap (char *x, char *y)
-{
-// A utility function
-    
-    char temp;
-    temp = *x;
-    *x = *y;
-    *y = temp;
-}
 
 int readDictionary(istream &dictfile, string dict[])
 {
@@ -36,6 +27,31 @@ int readDictionary(istream &dictfile, string dict[])
     return 1 + readDictionary(dictfile, dict+1);
 }
 
+void permute(string str, string out, int *numresults, string results[], int size, string dict[])
+{
+// A permutation algorithm that also checks against the dict to see if any permutation matches
+    
+    if (str.size() == 0)
+    {
+        for(int i = 0; i <= size; i++)
+        {
+            if(out == dict[i])
+            {
+                results[*numresults] = out;
+                cout << "Matching word " << out << endl;
+                numresults++;
+                return;
+            }
+        }
+    }
+    
+    for (int i = 0; i < str.size(); i++)
+    {
+        permute(str.substr(1), out + str[0], numresults, results, size, dict);
+        rotate(str.begin(), str.begin() + 1, str.end());
+    }
+}
+
 int recursivePermute(string word, const string dict[], int size, string results[])
 {
 //  Places all the permutations of word, which are found in dict into results.
@@ -43,12 +59,12 @@ int recursivePermute(string word, const string dict[], int size, string results[
 //  This number should not be larger than MAXRESULTS since that is the size of the array.
 //  The size is the number of words inside the dict array.
     
-    // stop when substr length = 1 (return 0)
+    int numresults = 0;
+    string blank = "";
     
-    // swap first letter with all other letters
-        // check each combination against dict and against results (to remove dupes)
-        // call recursive function with new first letter substr of minus first letter
-    // swap back letters (do I have to do this
+    permute(word, blank, &numresults, results, size, dict);
+    
+    return numresults;
 
 }
 

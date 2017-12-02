@@ -13,9 +13,9 @@
 #include <fstream>
 using namespace std;
 
-void swap (char *x, char *y);
-
 int readDictionary(istream &dictfile, string dict[]);
+
+void permute(string str, string out, int *numresults, string results[], int size, string dict[]);
 
 int recursivePermute(string word, const string dict[], int size, string results[]);
 
