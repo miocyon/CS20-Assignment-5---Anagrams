@@ -11,7 +11,6 @@
 #include <fstream>
 using namespace std;
 
-
 int readDictionary(istream &dictfile, string dict[])
 {
 //  Places each string in dictfile into the array dict. Returns the number of words read into dict.
@@ -24,7 +23,10 @@ int readDictionary(istream &dictfile, string dict[])
         return 0;
     }
     *dict = linedump;
-    return 1 + readDictionary(dictfile, dict+1);
+    if((1 + readDictionary(dictfile, dict+1)) > MAXDICTWORDS)
+        return 0;
+    else
+        return 1 + readDictionary(dictfile, dict+1);
 }
 
 void permute(string str, string out, int &numresults, string results[], int size, const string dict[])
@@ -37,9 +39,14 @@ void permute(string str, string out, int &numresults, string results[], int size
         {
             if(out == dict[i])
             {
-                results[numresults] = out;
-                numresults++;
-                return;
+                if(numresults > MAXRESULTS)
+                    return;
+                else
+                {
+                    results[numresults] = out;
+                    numresults++;
+                    return;
+                }
             }
         }
     }
@@ -63,6 +70,8 @@ int recursivePermute(string word, const string dict[], int size, string results[
     
     permute(word, blank, numresults, results, size, dict);
     
+    if(numresults > MAXRESULTS)
+        cout << "More possible permutations than can be shown";
     return numresults;
 
 }

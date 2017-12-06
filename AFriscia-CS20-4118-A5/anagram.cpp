@@ -9,6 +9,7 @@
 #include <istream>
 #include <cstring>
 #include "anagramfxns.hpp"
+#include "anagramfxns.cpp"
 using namespace std;
 
 const int MAXRESULTS   = 20;    // Max matches that can be found
