@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <string>
 #include <fstream>
+#include "globals.h"
 using namespace std;
 
 int readDictionary(istream &dictfile, string dict[]);

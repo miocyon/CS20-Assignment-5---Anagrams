@@ -9,11 +9,8 @@
 #include <istream>
 #include <cstring>
 #include "anagramfxns.hpp"
-#include "anagramfxns.cpp"
+#include "globals.h"
 using namespace std;
-
-const int MAXRESULTS   = 20;    // Max matches that can be found
-const int MAXDICTWORDS = 30000; // Max words that can be read in
 
 int main()
 {
@@ -33,6 +30,8 @@ int main()
     
     cout << "Please enter a string for an anagram: ";
     cin >> word;
+    
+    cout << nwords << endl;
     
     int numMatches = recursivePermute(word, dict, nwords, results);
     if (!numMatches)

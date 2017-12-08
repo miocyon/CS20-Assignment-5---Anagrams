@@ -5,10 +5,10 @@
 // a given wordlist.
 // This is the implementation file for the functions for this program.
 
-#include "anagramfxns.hpp"
 #include <string>
 #include <iostream>
 #include <fstream>
+#include "anagramfxns.hpp"
 using namespace std;
 
 int readDictionary(istream &dictfile, string dict[])
@@ -23,13 +23,13 @@ int readDictionary(istream &dictfile, string dict[])
         return 0;
     }
     *dict = linedump;
-    if((1 + readDictionary(dictfile, dict+1)) > MAXDICTWORDS)
-        return 0;
-    else
-        return 1 + readDictionary(dictfile, dict+1);
+//    if((1 + readDictionary(dictfile, dict+1)) > MAXDICTWORDS)
+//        return 0;
+//    else
+        return 1 + readDictionary(dictfile, dict + 1);
 }
 
-void permute(string str, string out, int &numresults, string results[], int size, const string dict[])
+void permute(string str, string out, int *numresults, string results[], int size, const string dict[])
 {
 // A permutation algorithm that also checks against the dict to see if any permutation matches
     
@@ -39,14 +39,14 @@ void permute(string str, string out, int &numresults, string results[], int size
         {
             if(out == dict[i])
             {
-                if(numresults > MAXRESULTS)
-                    return;
-                else
-                {
-                    results[numresults] = out;
+//                if(numresults > MAXRESULTS)
+//                    return;
+//                else
+//                {
+                    results[*numresults] = out;
                     numresults++;
                     return;
-                }
+//                }
             }
         }
     }
@@ -68,7 +68,9 @@ int recursivePermute(string word, const string dict[], int size, string results[
     int numresults = 0;
     string blank = "";
     
-    permute(word, blank, numresults, results, size, dict);
+    cout << size << endl;
+    
+    permute(word, blank, &numresults, results, size, dict);
     
     if(numresults > MAXRESULTS)
         cout << "More possible permutations than can be shown";

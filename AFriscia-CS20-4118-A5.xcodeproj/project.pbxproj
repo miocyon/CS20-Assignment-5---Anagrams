@@ -24,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1177F7331FDA0CB100CF336D /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
 		117966BC1FC928700006E8EA /* AFriscia-CS20-4118-A5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "AFriscia-CS20-4118-A5"; sourceTree = BUILT_PRODUCTS_DIR; };
 		117966C61FC928B70006E8EA /* anagramfxns.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = anagramfxns.cpp; sourceTree = "<group>"; };
 		117966C71FC928B70006E8EA /* anagramfxns.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = anagramfxns.hpp; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 				117966C91FC92B580006E8EA /* anagram.cpp */,
 				117966C61FC928B70006E8EA /* anagramfxns.cpp */,
 				117966C71FC928B70006E8EA /* anagramfxns.hpp */,
+				1177F7331FDA0CB100CF336D /* globals.h */,
 			);
 			path = "AFriscia-CS20-4118-A5";
 			sourceTree = "<group>";
