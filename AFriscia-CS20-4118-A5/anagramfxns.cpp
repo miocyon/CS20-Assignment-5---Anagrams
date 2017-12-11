@@ -29,7 +29,11 @@ int readDictionary(istream &dictfile, string dict[])
         return 1 + readDictionary(dictfile, dict + 1);
 }
 
+<<<<<<< HEAD
 void permute(string str, string out, int *numresults, string results[], int size, const string dict[])
+=======
+void permute(string str, string out, int *numresults, string results[], int size, string dict[])
+>>>>>>> parent of 6e3b0e9... fix recursive print
 {
 // A permutation algorithm that also checks against the dict to see if any permutation matches
     
@@ -39,6 +43,7 @@ void permute(string str, string out, int *numresults, string results[], int size
         {
             if(out == dict[i])
             {
+<<<<<<< HEAD
 //                if(numresults > MAXRESULTS)
 //                    return;
 //                else
@@ -47,6 +52,12 @@ void permute(string str, string out, int *numresults, string results[], int size
                     numresults++;
                     return;
 //                }
+=======
+                results[*numresults] = out;
+                cout << "Matching word " << out << endl;
+                numresults++;
+                return;
+>>>>>>> parent of 6e3b0e9... fix recursive print
             }
         }
     }
@@ -68,8 +79,11 @@ int recursivePermute(string word, const string dict[], int size, string results[
     int numresults = 0;
     string blank = "";
     
+<<<<<<< HEAD
     cout << size << endl;
     
+=======
+>>>>>>> parent of 6e3b0e9... fix recursive print
     permute(word, blank, &numresults, results, size, dict);
     
     if(numresults > MAXRESULTS)
@@ -85,8 +99,8 @@ void recurPrint(const string results[], int size)
     
     if(size == 0)
         return;
-
-    cout << "Matching word " << *(results + size - 1) << endl;
+    
+    cout << *(results + size) << endl;
     recurPrint(results, size - 1);
     
 }
